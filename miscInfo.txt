@@ -1,0 +1,14 @@
+Miscellaneous Information regarding functions and processes used in project - mostly new stuff I learned
+
+task_struct - vital part of linux kernel; each process has one
+    - stores many fields including PID, parent process pointer, process state, priority, etc. 
+
+ptrace system call info: 
+    - Causes Two Main Requests for tracing system calls: PTRACE_TRACEME, PTRACE_SYSCALL
+        - PTRACE_TRACEME: Child process calls before execve, declares parent process as tracer
+            - Parent proc pointer stored in child's task struct 
+         - PTRACE_SYSCALL: Called by parent for each syscall in child
+            - Child stops two times at each system call - once on entry, once on exit
+
+
+
